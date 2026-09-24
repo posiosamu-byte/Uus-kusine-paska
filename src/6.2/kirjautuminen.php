@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'db.php';
 
 $_SESSION['kayttajatunnus'] = $_POST['kayttajatunnus'];
@@ -20,3 +19,20 @@ try {
 
 $conn = null;
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kirjaudu Sisään</title>
+</head>
+<body>
+    <h1>Kirjaudu Sisään</h1>
+    <form action="kirjautuminen.php" method="post">
+        <label for="Kayttajatunnus">Käyttäjätunnus:</label>
+        <input type="text" id="Kayttajatunnus" name="Kayttajatunnus"><br><br>
+        <label for="Salasana">Salasana:</label>
+        <input type="password" id="Salasana" name="Salasana"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

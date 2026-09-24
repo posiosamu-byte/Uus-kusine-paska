@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'db.php';
 
 $nimi = $_POST['nimi'];
@@ -21,3 +20,34 @@ try {
 
 $conn = null;
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rekisteröityminen</title>
+</head>
+<body>
+    <h1>Rekisteröityminen</h1>
+    <form action="rekisteroityminen.php" method="post">
+        <label for="nimi">Nimi:</label>
+        <input type="text" id="nimi" name="nimi" required><br><br>
+
+        <label for="osoite">Osoite:</label>
+        <input type="text" id="osoite" name="osoite" required><br><br>
+
+        <label for="liittymisPVM">LiittymisPVM:</label>
+        <input type="date" id="liittymisPVM" name="liittymisPVM" required><br><br>
+
+        <label for="syntymavuosi">Syntymavuosi:</label>
+        <input type="number" id="syntymavuosi" name="syntymavuosi" required><br><br>
+
+        <label for="kayttajatunnus">Käyttäjätunnus:</label>
+        <input type="text" id="kayttajatunnus" name="kayttajatunnus" required><br><br>
+
+        <label for="salasana">Salasana:</label>
+        <input type="password" id="salasana" name="salasana" required><br><br>
+
+        <input type="submit" value="Rekisteröidy">
+    </form>
+    <a href="kirjautuminen.php">Kirjaudu sisään</a>
+</body>
